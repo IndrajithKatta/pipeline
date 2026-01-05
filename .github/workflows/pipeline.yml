@@ -32,21 +32,21 @@ jobs:
           -Danypoint.username="${{ secrets.USER }}" \
           -Danypoint.password="${{ secrets.PASS }}"
 
-  tagversion:
-    needs: build   # <-- This ensures tagversion only runs after build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout this repo
-        uses: actions/checkout@v4
+  # tagversion:
+  #   needs: build   # <-- This ensures tagversion only runs after build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout this repo
+  #       uses: actions/checkout@v4
 
-      - name: Create and push version tag
-        run: |
-          VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          VERSION_TAG="v$VERSION"
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git tag $VERSION_TAG
-          git push origin $VERSION_TAG
+  #     - name: Create and push version tag
+  #       run: |
+  #         VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+  #         VERSION_TAG="v$VERSION"
+  #         git config --global user.email "github-actions@github.com"
+  #         git config --global user.name "GitHub Actions"
+  #         git tag $VERSION_TAG
+  #         git push origin $VERSION_TAG
 
   deploydev:
     needs: tagversion  # <-- Ensure deploydev starts only after tagversion
