@@ -28,9 +28,7 @@ jobs:
 
       - name: Publish to Exchange
         run: |
-          mvn deploy --settings .settings/settings.xml -DskipMunitTests \
-          -Danypoint.username="${{ secrets.USER }}" \
-          -Danypoint.password="${{ secrets.PASS }}"
+          mvn deploy --settings .settings/settings.xml -DskipMunitTests 
 
   # tagversion:
   #   needs: build   # <-- This ensures tagversion only runs after build
