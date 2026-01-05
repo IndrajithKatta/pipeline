@@ -72,8 +72,7 @@ jobs:
           -Dappname="${{ secrets.APP_NAME }}" \
           -Danypoint.platform.client_id="${{ secrets.ENV_CLIENT_ID }}" \
           -Danypoint.platform.client_secret="${{ secrets.ENV_CLIENT_SECRET }}" \
-          -Dmule.env="${{ secrets.MULE_ENV }}" 
-          # -Dkey="${{ secrets.KEY }}"
+          -Dmule.env="${{ secrets.MULE_ENV }}"
 
   deployuat:
     needs: deploydev
