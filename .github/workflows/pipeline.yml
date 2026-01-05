@@ -69,7 +69,7 @@ jobs:
           -Danypoint.password="a8055e977df843bCB9fFB5683E52A9BA" \
           -Danypoint.businessGroup="a62f6236-0b02-4e5f-a8eb-dc5e37aedb12" \
           -Denv="dev" \
-          -Dappname="health_check123" \
+          -Dappname="health-check123" \
           -Danypoint.platform.client_id="777df98bcd084a75bfe4b973a9e53516" \
           -Danypoint.platform.client_secret="AF10d59Ee8C64EFb85BCc8474b2aA7eD" \
           -Dmule.env="dev"
